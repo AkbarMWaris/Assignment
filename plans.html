@@ -7,10 +7,10 @@
   <script src="https://cdn.tailwindcss.com"></script>
 </head>
 
-<body class="bg-gray-50 font-sans text-gray-800">
+<body class="bg-gray-50 font-sans text-gray-800 m-0">
 
   <!-- TOP BAR -->
-  <div class="bg-blue-900 text-white px-6 py-4 flex justify-between items-center">
+<div class="bg-[#0B2347] text-white px-4 md:px-12 lg:px-36 py-4 flex justify-between items-center">
     <a href="index.html" class="text-sm flex items-center gap-2">← Back</a>
     <div class="text-lg font-bold">logoipsum</div>
     <div></div>
@@ -27,64 +27,309 @@
   </div>
 
   <!-- PLAN DETAILS -->
-  <div class="max-w-6xl mx-auto mt-8 bg-white shadow rounded-lg p-6 text-sm flex flex-wrap gap-6 justify-between">
-    <div><strong>Destination:</strong> Australia</div>
-    <div><strong>Dates:</strong> 04/11/2025 - 13/11/2025</div>
-    <div><strong>Traveller Ages:</strong> 23</div>
-    <button class="text-blue-600 underline">Edit</button>
+  <div class="max-w-6xl mx-auto mt-8 bg-white rounded-lg shadow-sm">
+
+  <!-- 🔹 Mobile Header ONLY -->
+  <div class="flex items-center justify-between px-6 pt-6 md:hidden">
+    <h2 class="text-lg font-semibold text-gray-800">Trip Details</h2>
+    <button class="border border-blue-600 text-blue-600 px-4 py-1.5 rounded-md text-sm font-medium hover:bg-blue-50 transition">
+      Edit
+    </button>
   </div>
+
+  <!-- Divider (Mobile Only) -->
+  <div class="mt-4 border-t md:hidden"></div>
+
+  <!--  Desktop Layout -->
+  <div class="hidden md:flex items-center justify-between text-sm px-6 py-5">
+
+    <div class="flex items-center w-full">
+
+      <div class="flex-1">
+        <span class="font-semibold text-gray-700">Destination(s):</span>
+        <span class="ml-1 text-gray-900">Australia</span>
+      </div>
+
+
+      <div class="flex-1 px-6">
+        <span class="font-semibold text-gray-700">Dates:</span>
+        <span class="ml-1 text-gray-900">04/11/2025 - 13/11/2025</span>
+      </div>
+
+
+      <div class="flex-1">
+        <span class="font-semibold text-gray-700">Traveller Ages:</span>
+        <span class="ml-1 text-gray-900">23</span>
+      </div>
+
+      <!-- Desktop Edit Button -->
+      <div class="ml-6">
+        <button class="border border-blue-600 text-blue-600 px-4 py-1.5 rounded-md text-sm font-medium hover:bg-blue-50 transition">
+          Edit
+        </button>
+      </div>
+
+    </div>
+  </div>
+
+  <!--  Mobile Stacked Layout -->
+  <div class="md:hidden px-6 py-5 space-y-5 text-sm">
+    <div>
+      <p class="font-semibold text-gray-700">Destination(s):</p>
+      <p class="text-gray-900 mt-1">Australia</p>
+    </div>
+
+    <div>
+      <p class="font-semibold text-gray-700">Dates:</p>
+      <p class="text-gray-900 mt-1">04/11/2025 - 13/11/2025</p>
+    </div>
+
+    <div>
+      <p class="font-semibold text-gray-700">Traveller Ages:</p>
+      <p class="text-gray-900 mt-1">23</p>
+    </div>
+  </div>
+
+</div>
+
 
   <!-- PLANS COMPARISON -->
-  <div class="max-w-6xl mx-auto mt-8 grid md:grid-cols-2 gap-8">
+<div class="max-w-6xl mx-auto mt-6 ">
 
-    <!-- VOYAGER -->
-    <div class="bg-white shadow rounded-lg overflow-hidden">
-      <div class="p-6 text-center border-b">
-        <h2 class="text-lg font-bold mb-2">VOYAGER</h2>
+  <!-- ================= MOBILE PLAN SWITCHER ================= -->
+  <!-- Visible ONLY below md screens -->
+  <div class="md:hidden bg-white rounded-lg shadow p-4">
+
+    <!-- Toggle Buttons -->
+    <div class="flex flex-col border rounded-lg overflow-hidden text-sm font-semibold mb-5">
+      <button id="mVoyagerBtn" class="py-2 bg-gray-100">VOYAGER <span class="float-right pr-2">$15.98</span></button>
+      <button id="mPlusBtn" class="py-2 text-gray-500">VOYAGER PLUS <span class="float-right pr-2 text-yellow-500">$41.34</span></button>
+    </div>
+
+    <!-- Voyager Plan -->
+    <div id="mVoyager" class="space-y-4">
+      <div class="text-center">
+        <div class="w-14 h-14 mx-auto rounded-full bg-blue-950 flex items-center justify-center text-white font-bold">D</div>
+        <h3 class="mt-3 font-semibold">VOYAGER</h3>
         <p class="text-gray-400 line-through text-sm">From $17.37</p>
-        <p class="text-3xl font-bold text-blue-900">$15.98</p>
+        <p class="text-2xl font-bold text-blue-950">$15.98</p>
         <p class="text-xs text-gray-500">Total Cost</p>
       </div>
 
-      <div class="p-6 space-y-3 text-sm">
-        <div class="flex justify-between"><span>Cancellation</span><span>$1,000</span></div>
-        <div class="flex justify-between"><span>Luggage</span><span>$500</span></div>
-        <div class="flex justify-between"><span>Travel Delay</span><span class="text-gray-400">Not available</span></div>
-        <div class="flex justify-between"><span>Personal Liability</span><span class="text-gray-400">Not available</span></div>
+      <div class="space-y-3 text-sm">
+        <div class="flex justify-between border p-3 rounded"><span>Cancellation or trip interruption</span><span>$1,000</span></div>
+        <div class="flex justify-between border p-3 rounded"><span>Luggage and personal effects</span><span>$500</span></div>
+        <div class="flex justify-between border p-3 rounded text-gray-400"><span>Travel Delay</span><span>not available</span></div>
+        <div class="flex justify-between border p-3 rounded text-gray-400"><span>Personal Liability</span><span>not available</span></div>
       </div>
 
-      <div class="p-6 text-center">
-        <button class="bg-blue-900 text-white px-6 py-2 rounded">CHOOSE PLAN</button>
-      </div>
+      <button class="w-full bg-blue-950 text-white py-3 rounded font-semibold mt-4">CHOOSE PLAN</button>
     </div>
 
-    <!-- VOYAGER PLUS -->
-    <div class="bg-white shadow-lg rounded-lg overflow-hidden border-2 border-yellow-500">
-      <div class="p-6 text-center border-b">
-        <h2 class="text-lg font-bold mb-2">VOYAGER PLUS</h2>
+    <!-- Voyager Plus Plan -->
+    <div id="mPlus" class="space-y-4 hidden">
+      <div class="text-center">
+        <div class="w-14 h-14 mx-auto rounded-full bg-yellow-500 flex items-center justify-center text-white font-bold">D</div>
+        <h3 class="mt-3 font-semibold">VOYAGER PLUS</h3>
         <p class="text-gray-400 line-through text-sm">From $44.94</p>
-        <p class="text-3xl font-bold text-yellow-500">$41.34</p>
+        <p class="text-2xl font-bold text-yellow-500">$41.34</p>
         <p class="text-xs text-gray-500">Total Cost</p>
       </div>
 
-      <div class="p-6 space-y-3 text-sm">
-        <div class="flex justify-between"><span>Cancellation</span><span>$4,000</span></div>
-        <div class="flex justify-between"><span>Luggage</span><span>$1,000</span></div>
-        <div class="flex justify-between"><span>Travel Delay</span><span>$1,000</span></div>
-        <div class="flex justify-between"><span>Personal Liability</span><span>$2,500,000</span></div>
+      <div class="space-y-3 text-sm">
+        <div class="flex justify-between border p-3 rounded">
+          <span>Cancellation or trip interruption</span>
+          <select class="border rounded px-2 py-1">
+            <option>$4,000</option>
+            <option>$8,000</option>
+        </select>
+        </div>
+        <div class="flex justify-between border p-3 rounded">
+          <span>Luggage and personal effects</span>
+          <select class="border rounded px-2 py-1">
+            <option>$1,000</option>
+            <option>$2,000</option>
+            <option>$3,000</option>
+        </select>
+        </div>
+        <div class="flex justify-between border p-3 rounded"><span>Travel Delay</span><span>$1,000</span></div>
+        <div class="flex justify-between border p-3 rounded"><span>Personal Liability</span><span>$2,500,000</span></div>
       </div>
 
-      <div class="p-6 text-center">
-        <button class="bg-yellow-500 text-white px-6 py-2 rounded">CHOOSE PLAN</button>
+      <h4 class="font-semibold mt-4">Optional Cover</h4>
+      <div class="flex justify-between border p-3 rounded text-sm">
+        <span>Rental Vehicle Excess</span>
+        <select class="border rounded px-2 py-1">
+            <option>Not Selected</option>
+            <option>Available</option>
+            <option>Not Available</option>
+        </select>
       </div>
+
+      <button class="w-full bg-yellow-500 text-white py-3 rounded font-semibold mt-4">CHOOSE PLAN</button>
+      <div class="text-center text-blue-700 underline text-sm mt-3">View Policy Information</div>
+      <div class="text-center text-blue-700 underline text-sm">Show all benefits</div>
     </div>
-
   </div>
+
+
+  <!-- ================= DESKTOP COMPARISON TABLE ================= -->
+  <!-- Visible ONLY md and above -->
+  <div class="hidden md:block">
+
+
+<div class="max-w-6xl mx-auto mt-12 border rounded-lg overflow-hidden bg-white overflow-x-auto">
+
+      <!-- PLAN HEADER ROW -->
+      <div class="grid grid-cols-3 text-center border-b">
+        <div></div>
+
+        <div class="py-10 bg-gray-50">
+          <div class="w-14 h-14 mx-auto rounded-full bg-blue-950 flex items-center justify-center text-white text-xl font-bold">D</div>
+          <h2 class="mt-4 font-semibold tracking-wide">VOYAGER</h2>
+          <p class="text-gray-400 line-through text-sm mt-2">From $17.37</p>
+          <p class="text-3xl font-bold text-blue-950">$15.<span class="text-lg align-bottom">98</span></p>
+          <p class="text-xs text-gray-500 mt-1">Total Cost</p>
+          <p class="text-[11px] text-gray-400 mt-2">Policy benefits listed below, per traveller limits apply</p>
+        </div>
+
+        <div class="py-10">
+          <div class="w-14 h-14 mx-auto rounded-full bg-yellow-500 flex items-center justify-center text-white text-xl font-bold">D</div>
+          <h2 class="mt-4 font-semibold tracking-wide">VOYAGER PLUS</h2>
+          <p class="text-gray-400 line-through text-sm mt-2">From $44.94</p>
+          <p class="text-3xl font-bold text-yellow-500">$41.<span class="text-lg align-bottom">34</span></p>
+          <p class="text-xs text-gray-500 mt-1">Total Cost</p>
+          <p class="text-[11px] text-gray-400 mt-2">Policy benefits listed below, per traveller limits apply</p>
+        </div>
+      </div>
+
+      <!-- BENEFITS ROWS (same as yours) -->
+      <!-- keep the rest of your rows exactly the same here -->
+       <div class="text-sm">
+        <!-- Row -->
+        <div class="grid grid-cols-3 border-b">
+          <div class="p-4 flex items-center gap-2">
+            Cancellation or trip interruption
+            <span class="text-gray-400 text-xs">ⓘ</span>
+          </div>
+          <div class="p-4 text-center">$1,000</div>
+          <div class="p-4 text-center">
+            <select class="border rounded px-2 py-1 text-sm">
+              <option>$4,000</option>
+              <option>$8,000</option>
+            </select>
+          </div>
+        </div>
+
+        <!-- Row -->
+        <div class="grid grid-cols-3 border-b bg-gray-50">
+          <div class="p-4 flex items-center gap-2">
+            Luggage and personal effects
+            <span class="text-gray-400 text-xs">ⓘ</span>
+          </div>
+          <div class="p-4 text-center">$500</div>
+          <div class="p-4 text-center">
+            <select class="border rounded px-2 py-1 text-sm">
+              <option>$1,000</option>
+              <option>$2,000</option>
+              <option>$3,000</option>
+            </select>
+          </div>
+        </div>
+
+        <!-- Row -->
+        <div class="grid grid-cols-3 border-b">
+          <div class="p-4 flex items-center gap-2">
+            Travel Delay
+            <span class="text-gray-400 text-xs">ⓘ</span>
+          </div>
+          <div class="p-4 text-center text-gray-400">not available</div>
+          <div class="p-4 text-center">$1,000</div>
+        </div>
+
+        <!-- Row -->
+        <div class="grid grid-cols-3 border-b bg-gray-50">
+          <div class="p-4 flex items-center gap-2">
+            Personal Liability
+            <span class="text-gray-400 text-xs">ⓘ</span>
+          </div>
+          <div class="p-4 text-center text-gray-400">not available</div>
+          <div class="p-4 text-center">$2,500,000</div>
+        </div>
+      </div>
+
+      <!-- OPTIONAL COVER TITLE -->
+      <div class="p-4 font-semibold text-sm text-blue-950 border-b">
+        Optional Cover
+      </div>
+
+      <!-- OPTIONAL ROW -->
+      <div class="grid grid-cols-3 border-b text-sm">
+        <div class="p-4 flex items-center gap-2">
+          Rental Vehicle Excess
+          <span class="text-gray-400 text-xs">ⓘ</span>
+        </div>
+        <div class="p-4 text-center text-gray-400">not available</div>
+        <div class="p-4 text-center">
+          <select class="border rounded px-2 py-1 text-sm">
+            <option>Not Selected</option>
+            <option>Available</option>
+            <option>Not Available</option>
+          </select>
+        </div>
+      </div>
+
+      <!-- CTA ROW -->
+      <div class="grid grid-cols-3 text-center py-8">
+        <div class="text-left pl-6">
+          <button class="text-blue-700 underline text-sm">
+            Show All Benefits
+          </button>
+        </div>
+
+        <div>
+          <button class="bg-[#0B2347] text-white px-6 py-2 font-semibold">
+            CHOOSE PLAN
+          </button>
+          <div class="mt-3 text-blue-700 underline text-sm">
+            View Policy Information
+          </div>
+        </div>
+
+        <div>
+          <button class="bg-yellow-500 text-white px-6 py-2 font-semibold">
+            CHOOSE PLAN
+          </button>
+          <div class="mt-3 text-blue-700 underline text-sm">
+            View Policy Information
+          </div>
+        </div>
+      
+
+    </div>
+  </div>
+    </div>
+  </div>
+
+</div>
+
+
 
   <!-- FOOTER -->
-  <div class="mt-12 bg-blue-900 text-white text-xs text-center py-4">
-    ©2025 Logo Ipsum. All Rights Reserved.
+<div class="flex justify-between px-32 mt-8 bg-[#0B2347] text-white text-xs text-center py-6 w-full">
+    <div>
+        <a href="#">
+            ©2025 Logo Ipsum. All Rights Reserved.
+        </a>
+    </div>
+    <div>
+        <a href="#">
+            Privacy Policy | Term & Condition
+        </a>
+    </div>
   </div>
+
+  <script src="index.js"></script>
 
 </body>
 </html>

@@ -1,185 +1,209 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Travel Insurance</title>
-  <script src="https://cdn.tailwindcss.com"></script>
-  <style>
-    body {
-      background-image: url('bg-img.jpg');
-      background-size: cover;
-      background-position: center;
-      background-repeat: no-repeat;
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Travel Insurance</title>
+    <link href="https://fonts.googleapis.com/css2?family=Lato:ital,wght@0,100;0,300;0,400;0,700;0,900;1,100;1,300;1,400;1,700;1,900&family=Outfit:wght@100..900&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&family=Urbanist:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+  tailwind.config = {
+    theme: {
+      extend: {
+        fontFamily: {
+          'lato': ['"Lato"', 'sans-serif'],
+        },
+        // Optional: if you want to use Lato as the default font
+        // fontFamily: {
+        //   sans: ['"Lato"', 'system-ui', '-apple-system', 'sans-serif']
+        // }
+      }
     }
-  </style>
+  }
+</script>
+    <style>
+        body {
+            background-image: url('bg-img.jpg');
+            background-size: cover;
+            background-position: center;
+            background-repeat: no-repeat;
+        }
+    </style>
 </head>
 
 <body class="font-sans text-gray-800">
 
-  <!-- OVERLAY (for mega menu background dim) -->
-  <div id="overlay" class="fixed inset-0 bg-black/40 hidden z-30"></div>
+    <!-- OVERLAY (for mega menu background dim) -->
+    <div id="overlay" class="fixed inset-0 bg-black/40 hidden z-30"></div>
 
-<!-- NAVBAR WRAPPER (IMPORTANT) -->
-<div class="relative z-50">
+    <!-- NAVBAR WRAPPER (IMPORTANT) -->
+    <div class="relative z-50  w-full">
 
-  <!-- NAVBAR -->
-  <header class="bg-gray-900 text-white px-6 md:px-12 py-4 flex justify-between items-center">
-    <div class="text-xl font-bold">logoipsum</div>
+        <!-- NAVBAR -->
+        <header
+            class="w-full px-6 md:px-12 xl:px-20 py-4 flex justify-between items-center transition-colors duration-300">
+            <div id="logo" class="nav-text text-xl font-bold text-[#222425]">logoipsum</div>
 
-    <!-- Desktop Menu -->
-    <nav class="hidden md:flex gap-8 text-sm font-medium">
-      <button class="nav-btn">Travel Insurance ▾</button>
-      <button class="">Emergency Assistance</button>
-      <button class="">Customer Service ▾</button>
-    </nav>
+            <nav class="hidden md:flex gap-8 text-sm font-medium">
+                <button id="travelBtn" class="nav-text flex items-center gap-1 transition-colors duration-300">
+                    Travel Insurance
+                    <span id="travelArrow" class="transition-transform duration-300">▾</span>
+                </button>
 
-    <!-- Hamburger -->
-<button id="hamburgerBtn" class="md:hidden text-2xl focus:outline-none">☰</button>
-  </header>
+                <button class="nav-text">Emergency Assistance</button>
+                <button class="nav-text">Customer Service ▾</button>
+            </nav>
 
-  <!-- MOBILE FULLSCREEN MENU -->
-<div id="mobileMenu"
-     class="fixed inset-0 bg-white z-50 transform translate-x-full transition-transform duration-300 md:hidden">
+            <!-- Hamburger -->
+            <button id="hamburgerBtn" class="md:hidden text-2xl focus:outline-none">☰</button>
+        </header>
 
-  <!-- Top Bar -->
-  <div class="flex justify-between items-center px-6 py-4 border-b">
-    <div class="text-lg font-bold">logoipsum</div>
-    <button id="closeMobileMenu" class="text-2xl">&times;</button>
-  </div>
+        <!-- MOBILE FULLSCREEN MENU -->
+        <div id="mobileMenu"
+            class="fixed inset-0 bg-white z-50 transform translate-x-full transition-transform duration-300 md:hidden">
 
-  <!-- Menu Content -->
-  <div class="p-6 space-y-4 text-gray-800">
+            <!-- Top Bar -->
+            <div class="flex justify-between px-6 py-4 border-b">
+                <div class="text-lg font-bold">logoipsum</div>
+                <button id="closeMobileMenu" class="text-2xl">&times;</button>
+            </div>
 
-    <!-- Travel Insurance -->
-    <div>
-      <button class="accordion-btn w-full flex justify-between items-center font-semibold text-red-600">
-        Travel Insurance
-        <span>▴</span>
-      </button>
-      <div class="accordion-content mt-3 space-y-2 text-sm">
-        <a href="plans.html" class="block">Plans</a>
-        <a href="#" class="block">Upgrades</a>
-        <a href="#" class="block">Traveller Type</a>
-        <a href="#" class="block">Trip Type</a>
-        <a href="#" class="block">Benefits</a>
-      </div>
+            <!-- Menu Content -->
+            <div class="p-6 space-y-4 text-gray-800">
+
+                <!-- Travel Insurance -->
+                <div>
+                    <button class="accordion-btn w-full flex justify-between items-center font-semibold text-red-600">
+                        Travel Insurance
+                        <span>▴</span>
+                    </button>
+                    <div class="accordion-content mt-3 space-y-2 text-sm">
+                        <a href="plans.html" class="block">Plans</a>
+                        <a href="#" class="block">Upgrades</a>
+                        <a href="#" class="block">Traveller Type</a>
+                        <a href="#" class="block">Trip Type</a>
+                        <a href="#" class="block">Benefits</a>
+                    </div>
+                </div>
+
+                <!-- Emergency Assistance -->
+                <div>
+                    <button class="accordion-btn w-full flex justify-between items-center font-semibold">
+                        Emergency Assistance
+                        <span>▾</span>
+                    </button>
+                    <div class="accordion-content hidden mt-3 text-sm">
+                        <p>24/7 Help Center</p>
+                    </div>
+                </div>
+
+                <!-- Customer Service -->
+                <div>
+                    <button class="accordion-btn w-full flex justify-between items-center font-semibold">
+                        Customer Service
+                        <span>▾</span>
+                    </button>
+                    <div class="accordion-content hidden mt-3 text-sm">
+                        <p>Contact & FAQs</p>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+
+
+
+        <!-- MEGA MENU (NOW ATTACHED TO NAVBAR) -->
+        <div id="megaMenu" class="absolute left-0 top-full w-full bg-white shadow-2xl border-t 
+            opacity-0 -translate-y-4 pointer-events-none 
+            transition-all duration-300 ease-out ">
+
+            <div class="max-w-7xl mx-auto grid md:grid-cols-3 gap-8 p-10 items-center">
+
+                <!-- Image -->
+                <img src="https://images.unsplash.com/photo-1600880292203-757bb62b4baf"
+                    class="rounded-lg w-full object-cover">
+
+                <!-- Content -->
+                <div>
+                    <h2 class="text-xl font-bold mb-2">Travel Insurance</h2>
+                    <p class="text-gray-600 text-sm mb-4">
+                        Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nam gravida tincidunt mi.
+                    </p>
+                    <button class="bg-yellow-500 hover:bg-yellow-600 text-white font-semibold px-5 py-2 rounded">
+                        GET A QUOTE
+                    </button>
+                </div>
+
+                <!-- Links -->
+                <div class="space-y-3 text-sm font-medium">
+                    <a href="plans.html" class="block hover:text-yellow-600">Plans</a>
+                    <a href="#" class="block hover:text-yellow-600">Upgrades</a>
+                    <a href="#" class="block hover:text-yellow-600">Traveller Type</a>
+                    <a href="#" class="block hover:text-yellow-600">Trip Type</a>
+                    <a href="#" class="block hover:text-yellow-600">Benefits</a>
+                </div>
+
+            </div>
+        </div>
     </div>
-
-    <!-- Emergency Assistance -->
-    <div>
-      <button class="accordion-btn w-full flex justify-between items-center font-semibold">
-        Emergency Assistance
-        <span>▾</span>
-      </button>
-      <div class="accordion-content hidden mt-3 text-sm">
-        <p>24/7 Help Center</p>
-      </div>
-    </div>
-
-    <!-- Customer Service -->
-    <div>
-      <button class="accordion-btn w-full flex justify-between items-center font-semibold">
-        Customer Service
-        <span>▾</span>
-      </button>
-      <div class="accordion-content hidden mt-3 text-sm">
-        <p>Contact & FAQs</p>
-      </div>
-    </div>
-
-  </div>
-</div>
-
-
-  
-  <!-- MEGA MENU (NOW ATTACHED TO NAVBAR) -->
-  <div id="megaMenu"
-       class="hidden absolute left-0 top-full w-full bg-white shadow-2xl border-t z-40">
-
-    <div class="max-w-7xl mx-auto grid md:grid-cols-3 gap-8 p-10">
-
-      <!-- Image -->
-      <img src="https://images.unsplash.com/photo-1600880292203-757bb62b4baf"
-           class="rounded-lg w-full object-cover">
-
-      <!-- Content -->
-      <div>
-        <h2 class="text-xl font-bold mb-2">Travel Insurance</h2>
-        <p class="text-gray-600 text-sm mb-4">
-          Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nam gravida tincidunt mi.
+    <!-- HERO SECTION -->
+    <section class="min-h-screen flex flex-col items-center text-center pt-16 px-4">
+        <p class="text-2xl tracking-wide text-#212529 uppercase drop-shadow">
+            Breaking the limits of traditional travel insurance
         </p>
-        <button class="bg-yellow-500 hover:bg-yellow-600 text-white font-semibold px-5 py-2 rounded">
-          GET A QUOTE
-        </button>
-      </div>
+        <h1 class="text-2xl md:text-2xl font-lato font-bold mt-2 text-#212529 drop-shadow-lg ">
+            Find the Right Plan for You
+        </h1>
 
-      <!-- Links -->
-      <div class="space-y-3 text-sm font-medium">
-        <a href="plans.html" class="block hover:text-yellow-600">Plans</a>
-        <a href="#" class="block hover:text-yellow-600">Upgrades</a>
-        <a href="#" class="block hover:text-yellow-600">Traveller Type</a>
-        <a href="#" class="block hover:text-yellow-600">Trip Type</a>
-        <a href="#" class="block hover:text-yellow-600">Benefits</a>
-      </div>
+        <!-- FORM CARD -->
+        <div class="mt-8 bg-white rounded-2xl shadow-2xl w-full max-w-md overflow-hidden">
 
-    </div>
-  </div>
-</div>
-  <!-- HERO SECTION -->
-  <section class="min-h-screen flex flex-col items-center text-center pt-16 px-4">
-    <p class="text-2xl tracking-wide text-#212529 uppercase drop-shadow">
-      Breaking the limits of traditional travel insurance
-    </p>
-    <h1 class="text-2xl md:text-2xl font-bold mt-2 text-#212529 drop-shadow-lg">
-      Find the Right Plan for You
-    </h1>
+            <!-- Trip Type Tabs (FULL WIDTH, ATTACHED TO CARD) -->
+            <div class="flex bg-gray-100">
+                <button id="singleTab" class="flex-1 py-3 text-sm font-semibold bg-white text-black">
+                    Single Trip
+                </button>
+                <button id="multiTab" class="flex-1 py-3 text-sm font-semibold bg-yellow-400 text-black">
+                    Multi Trip
+                </button>
+            </div>
 
-    <!-- FORM CARD -->
-    <div class="mt-8 bg-white rounded-xl shadow-xl p-6 w-full max-w-md text-left">
-      <div class="flex mb-5 bg-gray-100 rounded-lg p-1">
-  <button id="singleTab"
-    class="flex-1 py-2 rounded-md text-sm font-semibold bg-yellow-400 text-white">
-    Single Trip
-  </button>
-  <button id="multiTab"
-    class="flex-1 py-2 rounded-md text-sm font-semibold text-gray-600">
-    Multi Trip
-  </button>
-</div>
+            <!-- FORM BODY -->
+            <div class="p-6 text-left">
 
+                <!-- Destination -->
+                <label class="block text-sm font-semibold mb-1">Where are you travelling?</label>
+                <input id="destinationInput" type="text"
+                    class="w-full border rounded-lg px-3 py-2 mb-3 focus:ring-2 focus:ring-yellow-400">
+                <div class="flex gap-2 mb-4 flex-wrap">
+                    <span class="tag bg-blue-900 text-white text-xs px-3 py-1 rounded-full cursor-pointer">Asia</span>
+                    <span class="tag bg-blue-900 text-white text-xs px-3 py-1 rounded-full cursor-pointer">Bali
+                        Indonesia</span>
+                    <span class="tag bg-blue-900 text-white text-xs px-3 py-1 rounded-full cursor-pointer">Canada</span>
+                </div>
+                <label class="block text-sm font-semibold mb-1">When do you leave?</label>
+                <input type="date" class="w-full border rounded-lg px-3 py-2 mb-3">
+                <label class="block text-sm font-semibold mb-1">When do you return?</label>
+                <input type="date" class="w-full border rounded-lg px-3 py-2 mb-3">
+                <label class="block text-sm font-semibold mb-1">Current age of all Travellers?</label>
+                <div class="flex items-center gap-2 mb-4">
+                    <input id="ageInput" type="number" min="0" class="w-20 border rounded-lg px-3 py-2 text-center">
+                    <button id="addAgeBtn" class="bg-yellow-400 text-white font-bold px-3 py-2 rounded-lg">+</button>
+                </div>
+                <input type="text" placeholder="Promo Code" class="w-full border rounded-lg px-3 py-2 mb-5">
+                <button
+                    class="w-full bg-yellow-500 hover:bg-yellow-600 text-white font-bold py-3 rounded-lg transition">
+                    GET A QUOTE </button>
+            </div>
 
-      <label class="block text-sm font-semibold mb-1">Where are you travelling?</label>
-      <input id="destinationInput" type="text"
-        class="w-full border rounded-lg px-3 py-2 mb-3 focus:ring-2 focus:ring-yellow-400">
+        </div>
+        </div>
 
-      <div class="flex gap-2 mb-4 flex-wrap">
-        <span class="tag bg-blue-900 text-white text-xs px-3 py-1 rounded-full cursor-pointer">Asia</span>
-        <span class="tag bg-blue-900 text-white text-xs px-3 py-1 rounded-full cursor-pointer">Bali Indonesia</span>
-        <span class="tag bg-blue-900 text-white text-xs px-3 py-1 rounded-full cursor-pointer">Canada</span>
-      </div>
+    </section>
 
-      <label class="block text-sm font-semibold mb-1">When do you leave?</label>
-      <input type="date" class="w-full border rounded-lg px-3 py-2 mb-3">
-
-      <label class="block text-sm font-semibold mb-1">When do you return?</label>
-      <input type="date" class="w-full border rounded-lg px-3 py-2 mb-3">
-
-      <label class="block text-sm font-semibold mb-1">Current age of all Travellers?</label>
-      <div class="flex items-center gap-2 mb-4">
-        <input id="ageInput" type="number" min="0" class="w-20 border rounded-lg px-3 py-2 text-center">
-        <button id="addAgeBtn" class="bg-yellow-400 text-white font-bold px-3 py-2 rounded-lg">+</button>
-      </div>
-
-      <input type="text" placeholder="Promo Code"
-        class="w-full border rounded-lg px-3 py-2 mb-5">
-
-      <button class="w-full bg-yellow-500 hover:bg-yellow-600 text-white font-bold py-3 rounded-lg transition">
-        GET A QUOTE
-      </button>
-    </div>
-  </section>
-
-  <script src="index.js"></script>
+    <script src="index.js"></script>
 </body>
+
 </html>
